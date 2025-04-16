@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - SIAP SK Desa Ciasmara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .news-carousel {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .carousel-item {
+            height: 400px;
+        }
+        
+        .carousel-item img {
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            text-align: left;
+        }
+        
+        .news-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .news-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .news-card .card-body {
+            padding: 1.5rem;
+        }
+        
+        .news-meta {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: 0.5rem;
+        }
+        
+        .btn-read-more {
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-read-more:hover {
+            transform: translateX(5px);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="#">Dashboard</a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="berita.html" class="sidebar-link active">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="profile.html" class="sidebar-link">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pengajuansurat.html" class="sidebar-link">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Pengajuan Surat</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="riwayatsurat.html" class="sidebar-link">
+                        <i class="fas fa-history"></i>
+                        <span>Riwayat Pengajuan</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="faq.html" class="sidebar-link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>FAQ</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link text-danger">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main p-3">
+            <div class="container-fluid">
+                <!-- Welcome Section -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h1 class="h3 mb-0">Selamat Datang, <span class="text-primary">User</span></h1>
+                        <p class="text-muted">Berikut adalah informasi terbaru dari Desa Ciasmara</p>
+                    </div>
+                    <div class="d-none d-md-block">
+                        <span class="text-muted">
+                            <i class="fas fa-calendar me-1"></i>
+                            <span id="currentDate">Loading...</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- News Carousel -->
+                <div class="news-carousel">
+                    <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../images/desaciasmara.jpg" class="d-block w-100" alt="Berita 1">
+                                <div class="carousel-caption">
+                                    <span class="badge bg-primary mb-2">Berita Terkini</span>
+                                    <h3>Pembangunan Infrastruktur Desa</h3>
+                                    <p>Peningkatan kualitas jalan desa untuk memudahkan akses warga.</p>
+                                    <a href="#" class="btn btn-light btn-read-more">Baca Selengkapnya</a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/desaciasmara.jpg" class="d-block w-100" alt="Berita 2">
+                                <div class="carousel-caption">
+                                    <span class="badge bg-success mb-2">Program Desa</span>
+                                    <h3>Program Pemberdayaan UMKM</h3>
+                                    <p>Pelatihan digital marketing untuk pelaku UMKM desa.</p>
+                                    <a href="#" class="btn btn-light btn-read-more">Baca Selengkapnya</a>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- News Grid -->
+                <div class="mb-4">
+                    <h2 class="section-title">Berita Terbaru</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="news-card card">
+                                <img src="../images/desaciasmara.jpg" class="card-img-top" alt="Berita">
+                                <div class="card-body">
+                                    <div class="news-meta">
+                                        <i class="fas fa-calendar me-1"></i> 20 April 2024
+                                    </div>
+                                    <h5 class="card-title">Gotong Royong Membersihkan Desa</h5>
+                                    <p class="card-text">Warga desa bersama-sama membersihkan lingkungan untuk menciptakan desa yang bersih dan sehat.</p>
+                                    <a href="#" class="btn btn-primary btn-read-more">
+                                        Baca Selengkapnya
+                                        <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="news-card card">
+                                <img src="../images/desaciasmara.jpg" class="card-img-top" alt="Berita">
+                                <div class="card-body">
+                                    <div class="news-meta">
+                                        <i class="fas fa-calendar me-1"></i> 19 April 2024
+                                    </div>
+                                    <h5 class="card-title">Vaksinasi Covid-19 Tahap 2</h5>
+                                    <p class="card-text">Program vaksinasi Covid-19 tahap kedua untuk warga desa telah dilaksanakan dengan lancar.</p>
+                                    <a href="#" class="btn btn-primary btn-read-more">
+                                        Baca Selengkapnya
+                                        <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="news-card card">
+                                <img src="../images/desaciasmara.jpg" class="card-img-top" alt="Berita">
+                                <div class="card-body">
+                                    <div class="news-meta">
+                                        <i class="fas fa-calendar me-1"></i> 18 April 2024
+                                    </div>
+                                    <h5 class="card-title">Pelatihan Pertanian Modern</h5>
+                                    <p class="card-text">Petani desa mengikuti pelatihan pertanian modern untuk meningkatkan hasil panen.</p>
+                                    <a href="#" class="btn btn-primary btn-read-more">
+                                        Baca Selengkapnya
+                                        <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="news-card card">
+                                <img src="../images/desaciasmara.jpg" class="card-img-top" alt="Berita">
+                                <div class="card-body">
+                                    <div class="news-meta">
+                                        <i class="fas fa-calendar me-1"></i> 18 April 2024
+                                    </div>
+                                    <h5 class="card-title">Pelatihan Pertanian Modern</h5>
+                                    <p class="card-text">Petani desa mengikuti pelatihan pertanian modern untuk meningkatkan hasil panen.</p>
+                                    <a href="#" class="btn btn-primary btn-read-more">
+                                        Baca Selengkapnya
+                                        <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="news-card card">
+                                <img src="../images/desaciasmara.jpg" class="card-img-top" alt="Berita">
+                                <div class="card-body">
+                                    <div class="news-meta">
+                                        <i class="fas fa-calendar me-1"></i> 18 April 2024
+                                    </div>
+                                    <h5 class="card-title">Pelatihan Pertanian Modern</h5>
+                                    <p class="card-text">Petani desa mengikuti pelatihan pertanian modern untuk meningkatkan hasil panen.</p>
+                                    <a href="#" class="btn btn-primary btn-read-more">
+                                        Baca Selengkapnya
+                                        <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Display current date
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('id-ID', options);
+    </script>
+</body>
+</html>

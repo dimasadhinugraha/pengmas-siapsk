@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAP SK - Sistem Informasi Permohonan Surat Keterangan Desa Ciasmara</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { 
+            font-family: 'Poppins', sans-serif;
+            padding-top: 76px;
+        }
+        .hero-section {
+            position: relative;
+            height: calc(100vh - 76px);
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('images/desaciasmara.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .navbar { 
+            background-color: rgba(255,255,255,0.95) !important;
+        }
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+                border-radius: 0 0 1rem 1rem;
+                z-index: 1000;
+            }
+            .navbar-nav {
+                padding: 0.5rem;
+            }
+            .navbar-nav .nav-item {
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+            .navbar-nav .btn {
+                margin-top: 0.5rem;
+            }
+        }
+        .card {
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">SIAP SK</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#feature">Feature</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary rounded-pill px-4 w-100" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container text-center text-white">
+            <h1 class="display-3 fw-bold mb-4">SIAP SK</h1>
+            <p class="fs-4 mb-5">Sistem Informasi Permohonan Surat Keterangan Desa Ciasmara</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-4">Desa Ciasmara</h2>
+                    <p class="text-muted">Desa Ciasmara adalah sebuah desa yang terletak di wilayah Kecamatan Pamijahan, Kabupaten Bogor, di wilayah Jawa Barat. Lokasi desa ini berada pada koordinat geografis yang berkisar di angka 6.627° LS dan 106.896° BT.</p>
+                    <p class="text-muted">Penduduk desa Ciasmara terdiri dari berbagai kelompok masyarakat, dengan sebagian besar dari mereka bermata pencaharian sebagai petani, pedagang, serta pekerja dari sektor lainnya.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/desaciasmara.jpg" alt="Desa Ciasmara" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="feature" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="text-center fw-bold mb-5">Feature</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/desaciasmara.jpg" class="card-img-top" alt="Pendaftaran">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Pendaftaran Permohonan</h5>
+                            <p class="card-text text-muted">Pendaftaran Permohonan Surat Keterangan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/desaciasmara.jpg" class="card-img-top" alt="Status">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Status Permohonan</h5>
+                            <p class="card-text text-muted">Lihat Status Permohonan yang telah diajukan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/desaciasmara.jpg" class="card-img-top" alt="Berita">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Berita</h5>
+                            <p class="card-text text-muted">Berbagai Informasi Terbaru tentang Desa Ciasmara</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 SIAP SK Desa Ciasmara. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                if(this.getAttribute('href') !== "#") {
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            
+            if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target)) {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.classList.remove('show');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
